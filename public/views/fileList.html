@@ -1,0 +1,17 @@
+<span ng-repeat="dir in path">
+   {{$index ? '  >  ' : ''}}
+   <a ng-if="!$last" href="{{path.slice(0, $index + 1).join('/')}}">
+      {{dir ? dir : 'Dropbox'}}
+   </a>
+   <span ng-if="$last">
+      {{dir ? dir : 'Dropbox'}}
+   </span>
+</span>
+<ul ng-repeat="dir in directories">
+   <li ng-if="dir['.tag'] === 'folder'">
+      <a href="{{dir.path_display}}">{{dir.name}}</a>
+   </li>
+   <li ng-if="dir['.tag'] === 'file'">
+      {{dir.name}}
+   </li>
+</ul>
