@@ -1,11 +1,9 @@
 import angular from 'angular'
 import angularRoute from 'angular-route'
-import MainController from './controllers/MainController'
 import fileListController from './controllers/fileListController'
 import dirFetcher from './services/dirFetcher'
 
 angular.module('app', ['ngRoute'])
-   .controller("MainController", MainController)
    .controller('fileListController', fileListController)
    .service('dirFetcher', dirFetcher)
 
