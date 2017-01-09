@@ -7,11 +7,13 @@
       {{dir ? dir : 'Dropbox'}}
    </span>
 </span>
-<ul ng-repeat="dir in directories">
-   <li ng-if="dir['.tag'] === 'folder'">
-      <a href="{{dir.path_display}}">{{dir.name}}</a>
-   </li>
-   <li ng-if="dir['.tag'] === 'file'">
-      {{dir.name}}
+<ul>
+   <li ng-repeat="dir in directories">
+      <a ng-if="dir['.tag'] === 'folder'" href="{{dir.path_display}}">
+         {{dir.name}}
+      </a>
+      <span ng-if="dir['.tag'] === 'file'">
+         {{dir.name}}
+      </span>
    </li>
 </ul>
